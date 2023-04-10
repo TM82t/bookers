@@ -1,16 +1,27 @@
 <h1>Books</h1>
 
  <table>
-  <p>Title</p>
-  <p>Book</p>
-  <p> </p>
-  <% @books.each do |book| %>
-  <span><%= book.title %></span>
-  <span><%= book.body %></span>
-  <%= link_to "Show", show_book_path(@book.id) %>
-  <%= link_to "Edit", edit_book_path(@book.id) %>
-  <%= link_to "Destroy" destroy_book_path(@book.id) %>
+  <head>
+   <p class="p-list">
+    <p class="p-list-item">Title</p>
+    <p class="p-list-item">Body</p>
+    <p class="p-list-item"></p>
+  </p>
+  </head>
+  <body>
+  <% @books.each do |f| %>
+
+  <span><%= f.title %></span>
+  <span><%= f.body %></span>
+
   <% end %>
+
+  <%= link_to "Show", new_book_path(@book.id) %>
+　<%= link_to "Edit", new_book_path(@book.id) %>
+　<%= link_to "Destroy", '/books' %>
+
+  </body>
+
  </table>
 
 
@@ -24,5 +35,5 @@
   <%= f.text_area :body %>
 
   <%= f.submit 'Create Book' %>
-  
+
 <% end %>

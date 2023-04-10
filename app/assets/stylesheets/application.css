@@ -45,8 +45,19 @@ table {
   box-sizing: border-box;
   text-indent: initial;
   border-spacing: 2px;
-  border-color: gray;
 }
+
+.p-list {
+  padding: 10px 10px;
+  margin: 0 auto;
+}
+
+.p-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
 
 h2 {
   margin: 0.67em;
