@@ -1,2 +1,11 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<meta charset="utf-8">
+
+&lt;%= form_with scope: :book, url: books_path, local: true do |form| %>
+
+&lt;% if @book.errors.any? %>
+
+&lt;% @book.errors.full_messages.each do |msg| %>
+
+     &lt;%= msg %>
+
+&lt;% end %>

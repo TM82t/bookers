@@ -28,7 +28,7 @@ body {
   margin: 33px;
 }
 
-p, ol, ul, td {
+p, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -36,7 +36,9 @@ p, ol, ul, td {
 }
 
 h1 {
-  margin: 0.67em;
+  display: block;
+  margin: 17.42px 0;
+  font-weight: bold;
 }
 
 table {
@@ -47,18 +49,68 @@ table {
   border-spacing: 2px;
 }
 
-.p-list {
-  padding: 10px 10px;
-  margin: 0 auto;
+thead {
+  display: table-header-group;
+  vertical-align: middle;
 }
 
-.p-list-item {
-  list-style: none;
-  display: inline-block;
-  margin: 0 20px;
+th {
+  padding: 1px 1px 5px;
+  display: table-cell;
+  text-align: center;
 }
 
+tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: center;
+}
 
 h2 {
-  margin: 0.67em;
+  display: block;
+  font-size: 19.5px;
+  margin: 16.185px 0;
+}
+
+document {
+  display: block;
+}
+
+div {
+  display: block;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+#errors_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errors_explanation ul li {
+  font-size: 12px;
+  list-style-type: square;
+}
+
+li {
+  display: list-item;
 }
