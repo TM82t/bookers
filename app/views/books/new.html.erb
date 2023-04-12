@@ -1,11 +1,65 @@
-<meta charset="utf-8">
+<p id="notice">
+  <%= flash[:notice] %>
+</p>
 
-&lt;%= form_with scope: :book, url: books_path, local: true do |form| %>
+<h1>Books</h1>
 
-&lt;% if @book.errors.any? %>
+ <table>
+  <thead>
+   <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+  </tr>
+  </thead>
 
-&lt;% @book.errors.full_messages.each do |msg| %>
+  <tbody>
+  <% @books.each do |f| %>
+   <tr>
+    <td><%= f.title %></td>
+    <td><%= f.body %></td>
+    <td><%= link_to "Show", book_path(f.id) %></td>
+    <td><%= link_to "Edit", edit_book_path(f.id) %></td>
+    <td><%= link_to "Destroy", book_path(f.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+   </tr>
+  <% end %>
+  </tbody>
 
-     &lt;%= msg %>
+ </table>
 
-&lt;% end %>
+
+<h2>New book</h2>
+
+<% if @book.errors.any? %>
+<div id="error_explanation">
+  <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @book do |f| %>
+  <div class="field">
+   <div class="field_with_errors">
+    <document>title</document>
+   </div>
+  
+   <div class="field_with_errors">
+    <%= f.text_field :title %>
+   </div>
+  </div>
+
+  <div class="field">
+   <div class="field_with_errors">
+    <document>body</document>
+   </div>
+   <div class="field_with_errors">
+    <%= f.text_area :body %>
+   </div>
+
+  <div class="actions"><%= f.submit 'Create Book' %></div>
+
+<% end %>
